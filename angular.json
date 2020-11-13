@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "miscelaneos": {
+    "authapp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/miscelaneos",
+            "outputPath": "dist/authapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -43,6 +43,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -65,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "miscelaneos:build"
+            "browserTarget": "authapp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "miscelaneos:build:production"
+              "browserTarget": "authapp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "miscelaneos:build"
+            "browserTarget": "authapp:build"
           }
         },
         "test": {
@@ -113,19 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "miscelaneos:serve"
+            "devServerTarget": "authapp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "miscelaneos:serve:production"
+              "devServerTarget": "authapp:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "miscelaneos",
-  "cli": {
-    "analytics": false
-  }
+    }},
+  "defaultProject": "authapp"
 }
